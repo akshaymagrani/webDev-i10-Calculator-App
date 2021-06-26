@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:5500/images/favicon-32x32.png">
+  <!-- links -->
+  <link href="/index.css" rel="stylesheet" type="text/css">
+
+  <title>Frontend Mentor | Calculator app</title>
+  <script src="math.js" type="text/javascript"></script>
+  <link href="/font.css" rel="stylesheet">
+</head>
+
+<body data-new-gr-c-s-check-loaded="8.876.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+  <div class="calc">
+    <p>calc</p>
+    <div class="themeDiv">
+      <span style="font-size: 1rem;padding: 1.5rem 1rem 0 1rem; font-weight: 700;">THEME</span>
+      <div>
+        <label for="theme1">1</label>
+        <label for="theme2">2</label>
+        <label for="theme3">3</label><br>
+        <div class="div-radio">
+          <input type="radio" id="theme1" name="theme" value="1" class="first">
+
+          <input type="radio" id="theme2" name="theme" value="2">
+
+          <input type="radio" id="theme3" name="theme" value="3">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="calc-screen" class="calc-screen"></div>
+  <div class="numbers">
+    <button name="7" onclick='expression(7)'>7</button>
+    <button name="8" onclick='expression(8)'>8</button>
+    <button name="9" onclick='expression(9)'>9</button>
+    <button name="DEL" class="del" onclick='del()'>DEL</button>
+    <!-- Row 2 -->
+    <button name="4" onclick='expression(4)'>4</button>
+    <button name="5" onclick='expression(5)'>5</button>
+    <button name="6" onclick='expression(6)'>6</button>
+    <button name="+" onclick='expression("+")'>+</button>
+    <!-- Row 3 -->
+    <button name="1" onclick='expression(1)'>1</button>
+    <button name="2" onclick='expression(2)'>2</button>
+    <button name="3" onclick='expression(3)'>3</button>
+    <button name="-" onclick='expression("-")'>-</button>
+    <!-- Row 4 -->
+    <button name="." onclick='expression(".")'>.</button>
+    <button name="0" onclick='expression(0)'>0</button>
+    <button name="/" onclick='expression("/")'>/</button>
+    <button name="*" onclick='expression("*")'>x</button>
+    <!-- Row 5 -->
+    <button class="row5_1" name="reset" onclick='reset()'>RESET</button>
+    <button class="row5_2" name="equalto" onclick='solutions()'>=</button>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io/?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Akshaykumar I. Magrani</a>.
+  </div>
+
+  <script>
+    // calculator operations
+    solution = document.getElementById('calc-screen');
+    console.log(solution);
+
+    buttons = document.getElementsByTagName('button');
+    console.log(buttons);
+
+    buttonsArray = Array.from(buttons);
+    console.log(buttonsArray);
+
+    var ex = '';
+
+    function expression(num) {
+      ex += num;
+      solution.innerText = ex;
+    }
+
+    function del() {
+      ex = ex.substr(0, ex.length - 1);
+      solution.innerText = ex;
+    }
+
+    function solutions() {
+      var tr = ex.split(/[+|-]/);
+      console.log(tr, tr.length);
+      var firstNum = ex.match(/[0-9]+/);
+      var secondNum = ex.match(/[0-9]+/)
+      console.log(firstNum);
+      var sol = math.evaluate(ex);
+      console.log(sol);
+      solution.innerText = sol;
+    }
+
+    function reset() {
+      ex = '';
+      solution.innerText = ex;
+    }
+  </script>
+
+</body>
+
+</html>
