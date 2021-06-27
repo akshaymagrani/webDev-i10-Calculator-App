@@ -22,9 +22,9 @@
     <div class="themeDiv">
       <span style="font-size: 1rem;padding: 1.5rem 1rem 0 1rem; font-weight: 700;">THEME</span>
       <div>
-        <label for="theme1">1</label>
-        <label for="theme2">2</label>
-        <label for="theme3">3</label><br>
+        <label for="theme1" class="radio">1</label>
+        <label for="theme2" class="radio">2</label>
+        <label for="theme3" class="radio">3</label><br>
         <div class="div-radio">
           <input type="radio" id="theme1" name="theme" value="1" class="first">
 
@@ -85,25 +85,37 @@
     }
 
     function del() {
+      console.log(typeof ex); //number,  needs to be converted to string.
+      ex = String(ex);
       ex = ex.substr(0, ex.length - 1);
       solution.innerText = ex;
     }
 
     function solutions() {
-      var tr = ex.split(/[+|-]/);
-      console.log(tr, tr.length);
-      var firstNum = ex.match(/[0-9]+/);
-      var secondNum = ex.match(/[0-9]+/)
-      console.log(firstNum);
       var sol = math.evaluate(ex);
       console.log(sol);
       solution.innerText = sol;
+      ex = sol;
     }
 
     function reset() {
       ex = '';
       solution.innerText = ex;
     }
+
+    //obtaining keyboard inputs from users because no one wants to click on buttons.
+    document.addEventListener('keyup', e => {
+      let regex = /[0-9]|\+|\*|\-|\//;
+      console.log(e.key, typeof e.key);
+      if (regex.test(e.key)) {
+        ex += e.key;
+        solution.innerText = ex;
+      };
+      if (e.key == "Enter") {
+        console.log(e.key);
+        solutions();
+      }
+    });
   </script>
 
 </body>

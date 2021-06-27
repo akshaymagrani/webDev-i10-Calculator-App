@@ -12,7 +12,7 @@
   
     --darkBlue_key-shadow: hsl(224, 28%, 35%);
   
-    --redKey-Th1: hsl(6, 63%, 50%);
+    --Th1-key-bg-toggle: hsl(6, 63%, 50%);
   
     --darkRed_key-shadow: hsl(6, 70%, 34%);
   
@@ -33,7 +33,7 @@
   
     --VeryDarkCyan_key-shadow: hsl(185, 58%, 25%);
   
-    --Orange_key-background-Toggle: hsl(25, 98%, 40%);
+    --Th2-key-bg-toggle: hsl(25, 98%, 40%);
   
     --DarkOrange_key-shadow: hsl(25, 99%, 27%);
   
@@ -58,7 +58,7 @@
   
     --vividMagenta_key-shadow: hsl(285, 91%, 52%);
   
-    --pureCyan_key-background-toggle: hsl(176, 100%, 44%);
+    --Th3-key-bg-toggle: hsl(176, 100%, 44%);
   
     --SoftCyan_key-shadow: hsl(177, 92%, 70%);
   
@@ -71,7 +71,11 @@
     --VeryDarkBlue: hsl(198, 20%, 13%);
     --White_text: hsl(0, 0, 100%);
   }
-  
+  *,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
   body {
     font-family: "Spartan", sans-serif;
     font-size: 32px;
@@ -79,7 +83,6 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: var(--mainBackground-Th1);
@@ -99,7 +102,7 @@
   .calc-screen {
     padding: 2rem;
     background-color: var(
-      --VeryDarkDesaturatedBlue_toggleBackground-keypadBackground
+      --VeryDarkDesaturatedBlue_screenBackground
     );
     margin: 1rem 0px;
     border-radius: 10px;
@@ -153,7 +156,7 @@
   div.numbers .row5_2 {
     grid-column: 3/5;
     padding: 0.65rem 1rem;
-    background-color: var(--redKey-Th1);
+    background-color: var(--Th1-key-bg-toggle);
     box-shadow: 0 5px 0px var(--darkRed_key-shadow);
     color: white;
     font-size: 1.5rem;
@@ -170,7 +173,7 @@
   }
   .div-radio {
     background-color: var(
-      --veryDarkViolet_toggle-background-keypadBackground-ScreenBackground
+      --VeryDarkDesaturatedBlue_toggleBackground-keypadBackground
     );
     align-items: center;
     display: flex;
@@ -188,6 +191,12 @@
   }
   .first {
     margin: 2px 2px 2px 0px;
+  }
+/*____designing custom radio buttons____*/
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
   
   .attribution {
