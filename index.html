@@ -20,22 +20,34 @@
   <div class="calc">
     <p>calc</p>
     <div class="themeDiv">
-      <span style="font-size: 1rem;padding: 1.5rem 1rem 0 1rem; font-weight: 700;">THEME</span>
-      <div>
+      <div class="theme">
+        <span style="font-size: 1rem;padding: 1.5rem 1rem 0 1rem; font-weight: 700;">THEME</span>
+      </div>
+      <div class="theme-label">
         <label for="theme1" class="radio">1</label>
         <label for="theme2" class="radio">2</label>
-        <label for="theme3" class="radio">3</label><br>
-        <div class="div-radio">
-          <input type="radio" id="theme1" name="theme" value="1" class="first">
-
-          <input type="radio" id="theme2" name="theme" value="2">
-
-          <input type="radio" id="theme3" name="theme" value="3">
-        </div>
+        <label for="theme3" class="radio">3</label>
       </div>
+      <div class="div-radio">
+        
+          <input type="radio" id="theme1" name="theme" value="1" class="first">
+          <span class="radio-input"></span>
+        
+        
+          <input type="radio" id="theme2" name="theme" value="2">
+          <span class="radio-input"></span>
+        
+        
+          <input type="radio" id="theme3" name="theme" value="3">
+          <span class="radio-input"></span>
+        
+      </tr>
     </div>
   </div>
+  </div>
+
   <div id="calc-screen" class="calc-screen"></div>
+  
   <div class="numbers">
     <button name="7" onclick='expression(7)'>7</button>
     <button name="8" onclick='expression(8)'>8</button>
