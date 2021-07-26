@@ -1,3 +1,3 @@
 Version 1
-[] Design custom radio buttons for all devices.
-[] Make sure that they work.
+[x] Design custom radio buttons for all devices.
+[x] Make sure that they work.

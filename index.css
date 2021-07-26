@@ -85,7 +85,6 @@
     transform: translate(-50%, -50%);
     margin: 0;
     padding: 0;
-    background-color: var(--mainBackground-Th1);
   }
   .calc {
     display: flex;
@@ -106,14 +105,10 @@
   .calc p {
     margin: 0.5rem;
     font-size: 2.2rem;
-    color: white;
     font-weight: bold;
   }
   .calc-screen {
     padding: 2rem;
-    background-color: var(
-      --VeryDarkDesaturatedBlue_screenBackground
-    );
     margin: 1rem 0px;
     border-radius: 10px;
     height: 112px;
@@ -129,18 +124,15 @@
   
   div.numbers {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 500px;
-    background-color: var(
-      --VeryDarkDesaturatedBlue_toggleBackground-keypadBackground
-    );
     padding: 1rem;
     min-width: 300px;
     border-radius: 10px;
   }
   div.numbers button {
-    padding: 1rem 0.65rem;
+    padding: 0.75rem 1.5rem;
     margin: 0.5rem;
     background-color: var(--LightGrayishOrange_key-background);
     display: flex;
@@ -179,11 +171,11 @@
     div.numbers .del {
       font-size: 2rem;
     }
+    div.numbers button {
+      padding: 0rem 0.75rem;
+    }
   }
   .div-radio {
-    background-color: var(
-      --VeryDarkDesaturatedBlue_toggleBackground-keypadBackground
-    );
     border-radius: 25px;
     display: flex;
     justify-content: space-around;
@@ -196,7 +188,6 @@
   .themeDiv {
     font-size: 1.5rem;
     text-align: center;
-    color: white;
     display: grid;
     width: 200px;
     grid-template-columns: 1fr 1fr;
@@ -221,10 +212,6 @@
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    border: 0.1em solid orange;
-  }
-  input:checked + .radio-input {
-    background-color: orange;
   }
   .div-radio td{
     vertical-align: middle;
